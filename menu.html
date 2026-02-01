@@ -10,15 +10,10 @@
 <body class="white-page">
 
 <div class="app-container">
-    <div class="custom-bg-shape">
-        <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M850 0H1440V900H950C950 900 850 750 1050 550C1250 350 850 150 850 0Z" fill="#111111"/>
-        </svg>
-    </div>
 
     <nav>
         <div class="logo-container">
-            <a href="index.html" class="brand-logo"><span style="font-weight:800; font-size: 20px;">FB</span></a>
+            <a href="index.html" class="brand-logo">Alchemist's Kitchen</a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -27,9 +22,6 @@
             <li><a href="platters.html">Platters</a></li>
             <li><a href="specials.html">Specials</a></li>
         </ul>
-        <div class="search">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
     </nav>
 
     <div class="page-header" style="position: relative; z-index: 10;">
@@ -48,25 +40,28 @@
                     <h3>Morning Bento</h3>
                     <p>Grilled fish, tamagoyaki, and rice.</p>
                     <p class="price">$16.00</p>
+                    <button class="add-btn" onclick="addToCart('Morning Bento', 16.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="hero-bowl.png" alt="Acai Power">
                     <h3>Acai Power</h3>
                     <p>Antioxidant-rich berry blend.</p>
                     <p class="price">$14.00</p>
+                    <button class="add-btn" onclick="addToCart('Acai Power', 14.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="leaf-bottom-right.png" alt="Matcha Latte" style="transform: none; filter: none;">
                     <h3>Matcha Latte</h3>
                     <p>Ceremonial grade with oat milk.</p>
                     <p class="price">$6.50</p>
-                    <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                    <button class="add-btn" onclick="addToCart('Matcha Latte', 6.50)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="sushi-hand.png" alt="Egg Souffle">
                     <h3>Egg Souffle</h3>
                     <p>Fluffy Japanese omelette.</p>
                     <p class="price">$9.00</p>
+                    <button class="add-btn" onclick="addToCart('Egg Souffle', 9.00)">Add to Order</button>
                 </div>
             </div>
         </div>
@@ -80,25 +75,28 @@
                     <h3>Zen Poke</h3>
                     <p>Fresh salmon, quinoa, citrus soy.</p>
                     <p class="price">$19.00</p>
+                    <button class="add-btn" onclick="addToCart('Zen Poke', 19.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="sushi-set.png" alt="Dragon Roll">
                     <h3>Dragon Roll</h3>
                     <p>Eel, avocado, tempura shrimp.</p>
                     <p class="price">$22.00</p>
+                    <button class="add-btn" onclick="addToCart('Dragon Roll', 22.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="hero-bowl.png" alt="Tuna Salad">
                     <h3>Tuna Salad</h3>
                     <p>Sashimi grade tuna, apple slices.</p>
                     <p class="price">$18.00</p>
-                    <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                    <button class="add-btn" onclick="addToCart('Tuna Salad', 18.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="sushi-hand.png" alt="Hand Roll">
                     <h3>Tempura Set</h3>
                     <p>Crispy prawns and vegetables.</p>
                     <p class="price">$20.00</p>
+                    <button class="add-btn" onclick="addToCart('Tempura Set', 20.00)">Add to Order</button>
                 </div>
             </div>
         </div>
@@ -112,19 +110,21 @@
                     <h3>Sashimi Deluxe</h3>
                     <p>Premium 12-piece chef's choice.</p>
                     <p class="price">$35.00</p>
+                    <button class="add-btn" onclick="addToCart('Sashimi Deluxe', 35.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="miso-soup.png" alt="Spicy Ramen">
                     <h3>Spicy Ramen</h3>
                     <p>Rich pork broth, soft egg, chili oil.</p>
                     <p class="price">$18.00</p>
+                    <button class="add-btn" onclick="addToCart('Spicy Ramen', 18.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="sushi-hand.png" alt="Wagyu Roll">
                     <h3>Wagyu Roll</h3>
                     <p>Seared beef, truffle mayo.</p>
                     <p class="price">$28.00</p>
-                    <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                    <button class="add-btn" onclick="addToCart('Wagyu Roll', 28.00)">Add to Order</button>
                 </div>
             </div>
         </div>
@@ -138,19 +138,21 @@
                     <h3>Mochi Trio</h3>
                     <p>Green tea, mango, strawberry.</p>
                     <p class="price">$8.00</p>
+                    <button class="add-btn" onclick="addToCart('Mochi Trio', 8.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="hero-bowl.png" alt="Fruit Tart">
                     <h3>Yuzu Tart</h3>
                     <p>Citrus curd, buttery crust.</p>
                     <p class="price">$10.00</p>
+                    <button class="add-btn" onclick="addToCart('Yuzu Tart', 10.00)">Add to Order</button>
                 </div>
                 <div class="card">
                     <img src="leaf-bottom-right.png" alt="Cheesecake" style="transform:none; filter:none;">
                     <h3>Matcha Cake</h3>
                     <p>Layered crepe cake with matcha.</p>
                     <p class="price">$12.00</p>
-                     <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                    <button class="add-btn" onclick="addToCart('Matcha Cake', 12.00)">Add to Order</button>
                 </div>
             </div>
         </div>

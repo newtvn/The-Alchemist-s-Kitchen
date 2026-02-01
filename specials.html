@@ -10,16 +10,12 @@
 <body class="white-page">
 
 <div class="app-container">
-    <div class="custom-bg-shape">
-        <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M850 0H1440V900H950C950 900 850 750 1050 550C1250 350 850 150 850 0Z" fill="#111111"/>
-        </svg>
-    </div>
 
     <nav>
         <div class="logo-container">
-            <a href="index.html" class="brand-logo"><span style="font-weight:800; font-size: 20px;">FB</span></a>
+            <a href="index.html" class="brand-logo">Alchemist's Kitchen</a>
         </div>
+        
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
@@ -27,14 +23,39 @@
             <li><a href="platters.html">Platters</a></li>
             <li><a href="specials.html" style="color:var(--accent-red)">Specials</a></li>
         </ul>
-        <div class="search">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        </div>
     </nav>
 
     <div class="page-header" style="position: relative; z-index: 10;">
         <h1 style="color: #111;">Member Exclusives</h1>
         <p>Unlock hidden menu items and chef's table events.</p>
+    </div>
+
+    <!-- Limited Time Carousel (Moved Before Newsletter) -->
+    <div class="category-section" style="position: relative; z-index: 10; margin-top: 40px;">
+        <h2 class="category-title">This Month Only</h2>
+        <div class="menu-carousel">
+            <div class="card">
+                <img src="hero-bowl.png" alt="Truffle Tuna">
+                <h3>Truffle Tuna</h3>
+                <p>Bluefin tuna with black truffle oil.</p>
+                <p class="price">$28.00</p>
+                <button class="add-btn" onclick="addToCart('Truffle Tuna', 28.00)">Add to Order</button>
+            </div>
+            <div class="card">
+                <img src="sushi-set.png" alt="Uni Special">
+                <h3>Uni Special</h3>
+                <p>Fresh sea urchin from Hokkaido.</p>
+                <p class="price">$42.00</p>
+                <button class="add-btn" onclick="addToCart('Uni Special', 42.00)">Add to Order</button>
+            </div>
+             <div class="card">
+                <img src="leaf-bottom-right.png" alt="Sakura Tea" style="filter:none;">
+                <h3>Sakura Tea</h3>
+                <p>Cherry blossom infused green tea.</p>
+                <p class="price">$8.00</p>
+                <button class="add-btn" onclick="addToCart('Sakura Tea', 8.00)">Add to Order</button>
+            </div>
+        </div>
     </div>
 
     <section class="section" style="position: relative; z-index: 10;">
@@ -48,36 +69,32 @@
         </div>
     </section>
 
-    <!-- Limited Time Carousel -->
-    <div class="category-section" style="position: relative; z-index: 10;">
-        <h2 class="category-title">This Month Only</h2>
-        <div class="menu-carousel">
-            <div class="card">
-                <img src="hero-bowl.png" alt="Truffle Tuna">
-                <h3>Truffle Tuna</h3>
-                <p>Bluefin tuna with black truffle oil.</p>
-                <p class="price">$28.00</p>
-            </div>
-            <div class="card">
-                <img src="sushi-set.png" alt="Uni Special">
-                <h3>Uni Special</h3>
-                <p>Fresh sea urchin from Hokkaido.</p>
-                <p class="price">$42.00</p>
-            </div>
-             <div class="card">
-                <img src="leaf-bottom-right.png" alt="Sakura Tea" style="filter:none;">
-                <h3>Sakura Tea</h3>
-                <p>Cherry blossom infused green tea.</p>
-                <p class="price">$8.00</p>
-                 <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
-            </div>
+    <footer style="position: relative; z-index: 10;">
+        <p style="text-align: center; color: #999; padding-bottom: 40px; font-size: 13px;">© 2026 Fresh Bites Restaurant. Crafted for Gourmet Lovers.</p>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <div class="close-cart" onclick="toggleCart()">&times;</div>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-row"><span>Total</span><span id="cart-total">$0.00</span></div>
+            <button class="checkout-btn">Checkout</button>
         </div>
     </div>
 
-    <footer style="position: relative; z-index: 10;">
-        <p style="text-align: center; color: #999; padding-bottom: 40px;">© 2026 Fresh Bites Restaurant.</p>
-    </footer>
+    <!-- Floating Toggle -->
+    <div class="cart-toggle" onclick="toggleCart()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <div class="cart-count">0</div>
+    </div>
+
+    <script src="script.js"></script>
 
 </div>
+
 </body>
 </html>
