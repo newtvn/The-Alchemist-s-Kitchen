@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshness in Every Bite | Premium Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <div class="custom-bg-shape">
+        <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M850 0H1440V900H950C950 900 850 750 1050 550C1250 350 850 150 850 0Z" fill="#111111"/>
+        </svg>
+    </div>
+
+    <!-- Decorative Leaves (Global) -->
+    <img src="leaf-top-left.png" alt="" class="decor leaf-1">
+    <img src="leaf-bottom-right.png" alt="" class="decor leaf-3"> 
+    
+    <!-- Using leaf-bottom-right as the one near the bowl if needed, or leaf-2 -->
+    <!-- The inspo has one top left, one bottom right, one near the bowl. -->
+    
+    <img src="sushi-hand.png" alt="" class="decor sushi-hand">
+
+    <nav>
+        <div class="logo-container">
+            <a href="#" class="brand-logo">
+                <img src="logo.png" alt="Logo" style="display:none;"> <!-- Hiding logo if inspo doesn't stick to it strictly, but keeping 'Menu' icon -->
+                 <!-- Replaced strict logo with the icon from inspo if possible, or keeping logo left -->
+                 <!-- Inspo has a 'User' icon or 'Bowl' icon for "Menu"? No, "Menu" text has an icon above it? 
+                      Actually "Menu" is a nav item. There is a logo on the far left?
+                      The image shows: [Bowl Icon] [Menu] [Lunch boxes] ... -->
+            </a>
+            <!-- Let's follow the text nav structure of the inspo: 
+                 [Icon] Menu   Lunch boxes   Platters   Specials   [Search]
+            -->
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="lunch-boxes.html">Lunch boxes</a></li>
+            <li><a href="platters.html">Platters</a></li>
+            <li><a href="specials.html" class="light-text">Specials</a></li>
+        </ul>
+
+        <div class="search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <span class="badge">CHEF'S SPECIAL</span>
+            <h1>Freshness<br>in every bite</h1>
+            <p>Healthy Sashimi Tuna Bites With Sashimi grade Tuna, 110 calories and 13g protein.</p>
+            <button class="btn">Download recipe</button>
+        </div>
+        
+        <div class="hero-images">
+             <img src="hero-bowl.png" alt="Fresh tuna salad bowl" class="main-bowl">
+             <!-- Floating berries would go here if we had them -->
+             <img src="leaf-bottom-right.png" alt="" class="floating-leaf-right">
+        </div>
+    </section>
+
+    <!-- Sections removed. This page is now only the landing page. -->
+
+</div>
+
+</body>
+</html>

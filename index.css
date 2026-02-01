@@ -1,0 +1,591 @@
+:root {
+    --primary-black: #111111;
+    --accent-red: #d32f2f;
+    --light-gray: #f9f9f9;
+    --text-color: #333;
+    --body-bg: #222;
+    /* Dark background like the desk */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    color: var(--primary-black);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- MAIN FRAME & BACKGROUND --- */
+.app-container {
+    width: 100%;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.custom-bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Behind content but observable */
+}
+
+.custom-bg-shape svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* --- NAVIGATION --- */
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo-container {
+    padding-left: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 80px;
+}
+
+.nav-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    color: #333;
+    transition: 0.3s;
+}
+
+.icon-box:hover {
+    background: #f5f5f5;
+    border-color: #333;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: 0.3s;
+}
+
+.nav-links li a.light-text {
+    color: white;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-red);
+}
+
+.search {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.search:hover {
+    opacity: 0.7;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Hero Text */
+.hero-text {
+    flex: 0;
+    white-space: nowrap;
+    position: relative;
+    z-index: 20;
+    margin-top: -40px;
+}
+
+.hero-text .badge {
+    color: #A64444;
+    /* Changed to black */
+    font-family: 'Space Grotesk', sans-serif;
+    /* Grotesk font */
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 18px;
+    /* Larger */
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.hero-text h1 {
+    font-size: 85px;
+    line-height: 1.1;
+    margin-bottom: 35px;
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-text p {
+    color: #555;
+    max-width: 400px;
+    margin-bottom: 60px;
+    line-height: 1.7;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Hero Images */
+.hero-images {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Main bowl */
+.main-bowl {
+    position: absolute;
+    right: 15%;
+    top: 58%;
+    /* Lowered */
+    transform: translateY(-50%);
+    width: 700px;
+    z-index: 30;
+    filter: drop-shadow(30px 30px 50px rgba(0, 0, 0, 0.3));
+}
+
+/* White Circle Backdrop */
+.white-circle-back {
+    position: absolute;
+    right: 14%;
+    top: 58%;
+    /* Lowered */
+    transform: translateY(-50%) translateX(20px);
+    width: 720px;
+    height: 700px;
+    background: #ffffff;
+    /* Create a slightly irregular shape */
+    border-radius: 54% 46% 51% 49% / 52% 48% 55% 45%;
+    z-index: 25;
+}
+
+.floating-leaf-right {
+    position: absolute;
+    bottom: 22%;
+    right: 18%;
+    width: 130px;
+    transform: rotate(30deg);
+    z-index: 35;
+    filter: drop-shadow(15px 15px 25px rgba(0, 0, 0, 0.4));
+}
+
+/* Other Decor */
+.leaf-1 {
+    position: absolute;
+    top: -40px;
+    left: 8%;
+    width: 200px;
+    transform: rotate(140deg);
+    z-index: 40;
+    filter: drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.15));
+}
+
+.leaf-3 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 200px;
+    transform: rotate(45deg);
+    z-index: 40;
+    filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+.sushi-hand {
+    position: absolute;
+    bottom: -140px;
+    left: 320px;
+    width: 500px;
+    z-index: 50;
+    transform: rotate(10deg);
+    filter: drop-shadow(20px 20px 40px rgba(0, 0, 0, 0.2));
+}
+
+/* --- SUBPAGE THEMES --- */
+
+/* Brand Logo (Active Link Fix) */
+.brand-logo {
+    text-decoration: none;
+    color: #111;
+    transition: 0.3s;
+}
+
+/* White Page Theme (Menu, Lunch, Platters) */
+body.white-page {
+    background: white;
+    color: #111;
+}
+
+/* Nav defaults to Index style (Black links, White Specials, White Search) */
+
+body.white-page .search svg {
+    stroke: #111;
+}
+
+/* Dark Page Theme (Specials) */
+body.dark-page {
+    background: #111;
+    color: white;
+}
+
+body.dark-page .app-container {
+    background: #111;
+}
+
+body.dark-page .nav-links li a {
+    color: white;
+}
+
+body.dark-page .nav-links li:last-child a {
+    color: white;
+    /* Maintain white */
+}
+
+body.dark-page .brand-logo {
+    color: white;
+}
+
+body.dark-page .search svg {
+    stroke: white;
+}
+
+/* Page Headers */
+.page-header {
+    text-align: center;
+    padding-top: 180px;
+    padding-bottom: 60px;
+}
+
+.page-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+body.dark-page .page-header p {
+    color: #ccc;
+}
+
+/* Card Enhancements for Dark Mode */
+.menu-grid {
+    padding-bottom: 120px;
+}
+
+body.dark-page .card {
+    background: #222;
+    color: white;
+}
+
+body.dark-page .card:hover {
+    background: #2a2a2a;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-page .card h3 {
+    color: white;
+}
+
+body.dark-page .card p {
+    color: #aaa;
+}
+
+body.dark-page .card .price {
+    color: var(--accent-red);
+}
+
+/* Newsletter Form (Specials) */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.newsletter-form input {
+    padding: 18px 30px;
+    border-radius: 50px;
+    border: none;
+    width: 350px;
+    outline: none;
+    font-size: 16px;
+    background: white;
+    color: #333;
+}
+
+.newsletter-form button {
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+}
+
+/* Image Styles */
+.story-img img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Page CTA Box Override */
+body.dark-page .cta-box {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* --- MENU CAROUSEL --- */
+.menu-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    padding: 20px 0 80px;
+    /* Bottom padding for hover effects */
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Hide scrollbar */
+    position: relative;
+    z-index: 20;
+}
+
+.menu-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-carousel .card {
+    min-width: 380px;
+    /* Fixed width for carousel items */
+    scroll-snap-align: center;
+    position: relative;
+    /* Context for arrow */
+}
+
+/* Scroll Arrow Overlay */
+.scroll-arrow {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 30;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.scroll-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: var(--accent-red);
+}
+
+.scroll-arrow svg {
+    stroke: white;
+}
+
+/* --- CATEGORIZED ROWS --- */
+.category-section {
+    margin-bottom: 60px;
+    padding-left: 80px;
+    /* Align with nav padding */
+}
+
+.category-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+body.dark-page .category-title {
+    color: white;
+}
+
+/* Adjust carousel padding to not clip shadows */
+.menu-carousel {
+    padding: 20px 80px 60px 0;
+    /* Right padding handled by container? No, let items flow. Padding left handled by section. */
+    padding-left: 0;
+    /* Section has padding */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    letter-spacing: -1px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    background: var(--light-gray);
+    padding: 60px 40px;
+    border-radius: 50px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    background: #fff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+}
+
+.card h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card .price {
+    font-weight: 800;
+    color: var(--accent-red);
+    font-size: 20px;
+}
+
+.story-split {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: #fafafa;
+    border-radius: 60px;
+    margin: 0 60px;
+    padding: 80px;
+}
+
+.cta-box {
+    background: var(--primary-black);
+    color: white;
+    padding: 100px;
+    border-radius: 60px;
+    text-align: center;
+    margin: 0 80px 80px;
+}
+
+.cta-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}

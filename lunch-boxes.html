@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Boxes | Fresh Bites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="white-page">
+
+<div class="app-container">
+    <div class="custom-bg-shape">
+        <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M850 0H1440V900H950C950 900 850 750 1050 550C1250 350 850 150 850 0Z" fill="#111111"/>
+        </svg>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="brand-logo"><span style="font-weight:800; font-size: 20px;">FB</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="lunch-boxes.html" style="color:var(--accent-red)">Lunch boxes</a></li>
+            <li><a href="platters.html">Platters</a></li>
+            <li><a href="specials.html">Specials</a></li>
+        </ul>
+        <div class="search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+    </nav>
+
+    <div class="page-header" style="position: relative; z-index: 10;">
+        <h1 style="color: #111;">The Balanced Lunch Box</h1>
+        <p>Engineered for the modern workflow.</p>
+    </div>
+
+    <section class="section" style="padding-bottom: 60px; position: relative; z-index: 10;">
+        <div class="story-split">
+            <div class="story-img"><img src="lunchbox-ui.jpg" alt="Lunchbox"></div>
+            <div class="story-content">
+                <span class="badge" style="color: var(--accent-red); font-weight: 700;">Weekly Refresh</span>
+                <h2 style="font-family: 'Space Grotesk'; font-size: 40px; margin: 15px 0 25px;">Fuel Your Ambition</h2>
+                <p style="color:#666; margin-bottom: 35px; line-height: 1.6;">Our chefs curate a new box every week, ensuring you never get bored.</p>
+                <button class="btn">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" style="padding: 0; position: relative; z-index: 10; overflow: visible;">
+        
+        <div class="category-section">
+            <h2 class="category-title">Protein Packed</h2>
+            <div class="menu-carousel">
+                <div class="card">
+                    <img src="hero-bowl.png" alt="Steak Box">
+                    <h3>Steak & Greens</h3>
+                    <p>Grilled sirloin with broccoli.</p>
+                    <p class="price">$20.00</p>
+                </div>
+                <div class="card">
+                    <img src="poke-bowl.png" alt="Salmon Box">
+                    <h3>Salmon Teriyaki</h3>
+                    <p>Glazed salmon, brown rice.</p>
+                    <p class="price">$18.00</p>
+                </div>
+                <div class="card">
+                    <img src="sushi-set.png" alt="Chicken Box">
+                    <h3>Lemon Chicken</h3>
+                    <p>Herb roasted breast, sweet potato.</p>
+                    <p class="price">$16.00</p>
+                     <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Plant Based</h2>
+            <div class="menu-carousel">
+                <div class="card">
+                    <img src="hero-bowl.png" alt="Buddha Bowl">
+                    <h3>Buddha Bowl</h3>
+                    <p>Chickpeas, avocado, tahini.</p>
+                    <p class="price">$15.00</p>
+                </div>
+                <div class="card">
+                    <img src="leaf-bottom-right.png" alt="Tofu Box" style="filter:none;">
+                    <h3>Crispy Tofu</h3>
+                    <p>Sesame crusted tofu, soba noodles.</p>
+                    <p class="price">$14.00</p>
+                    <div class="scroll-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="position: relative; z-index: 10;">
+        <p style="text-align: center; color: #999; padding-bottom: 40px;">© 2026 Fresh Bites Restaurant.</p>
+    </footer>
+</div>
+</body>
+</html>
