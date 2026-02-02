@@ -401,16 +401,23 @@ body.dark-page .card .price {
 }
 
 /* FORCE WHITE PAGE NAV OVERRIDES */
-body.white-page .nav-links li a {
-    color: #111 !important;
+/* FORCE WHITE PAGE NAV OVERRIDES (DESKTOP ONLY) */
+@media (min-width: 769px) {
+    body.white-page .nav-links li a {
+        color: #111 !important;
+    }
 }
 
-body.white-page .nav-links li a.light-text {
-    color: #111 !important;
+@media (min-width: 769px) {
+    body.white-page .nav-links li a.light-text {
+        color: #111 !important;
+    }
 }
 
-body.white-page .nav-links li:last-child a {
-    color: #111 !important;
+@media (min-width: 769px) {
+    body.white-page .nav-links li:last-child a {
+        color: #111 !important;
+    }
 }
 
 body.white-page .nav-links li a:hover {
@@ -745,4 +752,344 @@ footer {
     text-align: center;
     font-size: 14px;
     color: #aaa;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE STYLES (ADDED)
+   ========================================= */
+
+/* --- 1. GLOBAL ROOT VARIABLES FOR SPACING --- */
+:root {
+    --padding-x: 100px;
+    --padding-y: 60px;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --padding-x: 50px;
+        --padding-y: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --padding-x: 20px;
+        --padding-y: 25px;
+    }
+}
+
+/* --- 2. TYPOGRAPHY SCALING --- */
+h1 {
+    font-size: clamp(36px, 8vw, 85px);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(28px, 6vw, 64px);
+}
+
+p {
+    font-size: clamp(14px, 3.5vw, 16px);
+    /* Slightly increased base for mobile readability */
+    line-height: 1.6;
+}
+
+/* --- 3. NAVIGATION (HAMBURGER MENU) --- */
+/* Hamburger Button (Hidden on Desktop) */
+/* Hamburger Button (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1001;
+    /* Above mobile nav */
+    color: #111;
+    padding: 10px;
+    /* Larger touch target */
+    outline: none;
+    /* Remove blue outline */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove mobile tap highlight */
+    transition: color 0.3s;
+}
+
+.hamburger:focus {
+    outline: none;
+    /* Double ensure */
+}
+
+.hamburger.open {
+    color: white !important;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+}
+
+/* Mobile Nav Styles */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+        /* Reduced Nav Padding */
+    }
+
+    /* Hide desktop links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #111;
+        /* Dark overlay */
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        z-index: 999;
+    }
+
+    /* Open State */
+    .nav-links.mobile-open {
+        display: flex !important;
+    }
+
+    .nav-links li a {
+        color: white !important;
+        /* Force white text in mobile menu */
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    /* Double override for white-page conflict if necessary */
+    body.white-page .nav-links li a {
+        color: white !important;
+    }
+
+    .hamburger {
+        display: block !important;
+        /* Show hamburger */
+    }
+
+    /* Ensure hamburger color adapts if necessary */
+    body.dark-page .hamburger {
+        color: white;
+    }
+
+    /* On Home Page (Split), button might need specific coloring or background */
+    body:not(.white-page):not(.dark-page) .hamburger {
+        color: #111;
+        /* Left side is white usually */
+    }
+}
+
+/* --- 4. HERO SECTION REFLOW --- */
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 0 50px;
+        text-align: center;
+        flex-direction: column-reverse;
+        /* Stack Image on top of text usually, or text top? User said Image Top. */
+        justify-content: center;
+    }
+
+    .hero-text {
+        margin-top: 40px;
+        /* Space between image and text */
+        white-space: normal;
+        /* Allow text wrapping */
+    }
+
+    .hero-text h1 {
+        font-size: 64px;
+    }
+
+    .hero-text p {
+        margin: 0 auto 40px;
+        /* Center align paragraph */
+    }
+
+    /* Reset Container for Images so it flows in Flexbox */
+    .hero-images {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust Hero Images for Tablet */
+    .main-bowl {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .white-circle-back {
+        display: none;
+        /* Hide complex background shape on mobile/tablet for cleaner look */
+    }
+
+    .floating-leaf-right,
+    .leaf-1,
+    .leaf-3,
+    .sushi-hand {
+        display: none;
+        /* Simplify decor */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px 40px;
+        /* Top padding for Nav */
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        /* Text Top, Image Bottom or vice versa? */
+        /* User requested "flex-direction: column-reverse; Image on top" */
+        /* Actually, standard is Text then Image. Let's do Text Top for better flow? */
+        /* User Request: "flex-direction: column-reverse; Image on top" */
+        flex-direction: column-reverse;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+        /* Readable on mobile */
+    }
+
+    .main-bowl {
+        width: 80%;
+        max-width: 320px;
+        margin-bottom: 30px;
+    }
+
+    /* Disable the split background on Home for Mobile */
+    body:not(.white-page):not(.dark-page) .custom-bg-shape {
+        display: none;
+        /* Remove split curve */
+        /* background: linear-gradient(to bottom, #fff 50%, #eee 50%); Optional replacement */
+    }
+}
+
+/* --- 5. CARDS & CAROUSEL --- */
+@media (max-width: 768px) {
+    .category-section {
+        padding-left: 20px;
+        /* Align with new root padding */
+    }
+
+    .menu-carousel {
+        padding: 20px 20px 40px 0;
+        gap: 20px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .menu-carousel .card {
+        min-width: 85vw;
+        /* 85% Viewport Width */
+        scroll-snap-align: center;
+    }
+
+    /* Hide Scroll Arrow on Mobile */
+    .scroll-arrow {
+        display: none;
+    }
+
+    /* Menu Grid (Platters/Vertical lists) */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        /* Single column */
+        padding: 0 20px 80px;
+    }
+
+    .card {
+        padding: 40px 20px;
+        /* Reduced internal padding */
+    }
+
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+/* --- 6. CART SIDEBAR (FULL WIDTH) --- */
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+        /* Fully hidden */
+    }
+
+    .cart-sidebar.open {
+        right: 0;
+    }
+
+    /* Ensure checkout button handles bottom of screen */
+    .cart-footer {
+        padding-bottom: 40px;
+        /* Extra space for iPhone home bar */
+    }
+}
+
+/* --- 7. OTHER SECTIONS --- */
+@media (max-width: 768px) {
+
+    /* Story Split (About Us) */
+    .story-split {
+        flex-direction: column;
+        padding: 40px 20px;
+        margin: 0 20px;
+        gap: 40px;
+    }
+
+    .story-content,
+    .story-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* CTA Box (Newsletter) */
+    .cta-box {
+        margin: 0 20px 60px;
+        padding: 60px 20px;
+    }
+
+    .cta-box h2 {
+        font-size: 32px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    /* Page Headers */
+    .page-header {
+        padding-top: 120px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 48px;
+    }
 }

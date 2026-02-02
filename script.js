@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItemsContainer = document.querySelector('.cart-items');
     const totalElement = document.getElementById('cart-total');
     const cartCountElement = document.querySelector('.cart-count');
-    
+
     // Toggle Cart
     window.toggleCart = () => {
         cartSidebar.classList.toggle('open');
@@ -38,14 +38,36 @@ document.addEventListener('DOMContentLoaded', () => {
         cartCountElement.textContent = cart.length;
     }
 
-    // Scroll Arrows Logic
+    // --- CAROUSEL SCROLL LOGIC ---
     document.querySelectorAll('.scroll-arrow').forEach(arrow => {
-        arrow.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent card clicks
+        arrow.addEventListener('click', function (e) {
+            e.stopPropagation();
             const carousel = this.closest('.menu-carousel');
             if (carousel) {
-                carousel.scrollBy({ left: 300, behavior: 'smooth' });
+                // Scroll width of one card + gap (approx 340px)
+                carousel.scrollBy({ left: 340, behavior: 'smooth' });
             }
         });
     });
+
+    // --- HAMBURGER MENU LOGIC ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+            hamburger.classList.toggle('open');
+            hamburger.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+                hamburger.classList.remove('open');
+                hamburger.textContent = '☰';
+            });
+        });
+    }
 });
